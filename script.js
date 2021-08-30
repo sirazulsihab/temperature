@@ -9,12 +9,17 @@ const loadWeather = () => {
 }
 
 const displayWeatherStatus = weather => {
+    console.log(weather.main.temp);
     console.log(weather);
+
+    const cityName = document.getElementById('city-name');
+    cityName.innerText = weather.name;
+    const temp = document.getElementById('temp');
+    temp.innerText = weather.main.temp
 }
 
 const searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('click', function() {
-    const cityName = document.getElementById('city-name');
-    const cityText = cityName.innerText;
-    
+    loadWeather()
+
 })
